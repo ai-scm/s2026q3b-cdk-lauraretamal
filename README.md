@@ -1,14 +1,68 @@
-# Welcome to your CDK TypeScript project
+# AWS CDK - S3 Bucket
 
-This is a blank project for CDK development with TypeScript.
+Proyecto realizado con AWS CDK y TypeScript para crear recursos de AWS mediante código.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## ¿Qué hace?
 
-## Useful commands
+El proyecto crea:
 
-* `npm run build`   type-check the project
-* `npm run watch`   watch for changes and type-check
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+- Una función AWS Lambda con una Function URL.
+- Un bucket de Amazon S3.
+- Un archivo `hola-mundo.txt` dentro del bucket con el contenido `hola mundo`.
+
+
+## Comandos principales
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Compilar el proyecto:
+
+```bash
+npm run build
+```
+
+Generar la plantilla de CloudFormation:
+
+```bash
+cdk synth
+```
+
+Desplegar los recursos:
+
+```bash
+cdk deploy
+```
+
+Eliminar los recursos creados:
+
+```bash
+cdk destroy
+```
+
+## Recursos principales
+
+### AWS Lambda
+
+Se crea una función Lambda que responde mediante una Function URL.
+
+### Amazon S3
+
+Se crea un bucket S3 y se utiliza `BucketDeployment` para cargar automáticamente el archivo `files/hola-mundo.txt`.
+
+El archivo contiene:
+
+```text
+hola mundo
+```
+
+## Tecnologías
+
+* AWS CDK v2
+* TypeScript
+* AWS Lambda
+* Amazon S3
+* AWS CloudFormation
